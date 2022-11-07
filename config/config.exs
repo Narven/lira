@@ -33,8 +33,6 @@ config :lira, LiraWeb.Endpoint,
   pubsub_server: Lira.PubSub,
   live_view: [signing_salt: "0VH1U+D2"]
 
-
-
 # Configures the mailer
 #
 # By default it uses the "Local" adapter which stores the emails
@@ -57,7 +55,8 @@ config :esbuild,
     env: %{"NODE_PATH" => Path.expand("../deps", __DIR__)}
   ],
   catalogue: [
-    args: ~w(../deps/surface_catalogue/assets/js/app.js --bundle --target=es2016 --minify --outdir=../priv/static/assets/catalogue),
+    args:
+      ~w(../deps/surface_catalogue/assets/js/app.js --bundle --target=es2016 --minify --outdir=../priv/static/assets/catalogue),
     cd: Path.expand("../assets", __DIR__),
     env: %{"NODE_PATH" => Path.expand("../deps", __DIR__)}
   ]

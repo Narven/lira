@@ -10,11 +10,17 @@
       </p>
       {#if Code.ensure_loaded?(LiraWeb.Demo)}
         <div class="flex justify-center">
-          <a href="/demo" class="inline-flex text-white bg-teal-500 border-0 py-2 px-6 focus:outline-none hover:bg-teal-600 rounded text-lg">
+          <a
+            href="/demo"
+            class="inline-flex text-white bg-teal-500 border-0 py-2 px-6 focus:outline-none hover:bg-teal-600 rounded text-lg"
+          >
             Card demo
           </a>
           {#if Application.spec(:surface_catalogue)}
-            <a href="/catalogue/components/LiraWeb.Components.Card/example" class="ml-4 inline-flex text-gray-700 bg-gray-200 border-0 py-2 px-6 focus:outline-none hover:bg-gray-300 rounded text-lg">
+            <a
+              href="/catalogue/components/LiraWeb.Components.Card/example"
+              class="ml-4 inline-flex text-gray-700 bg-gray-200 border-0 py-2 px-6 focus:outline-none hover:bg-gray-300 rounded text-lg"
+            >
               Card examples
             </a>
           {/if}

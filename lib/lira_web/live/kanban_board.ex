@@ -12,18 +12,53 @@ defmodule LiraWeb.KanbanBoard do
       :ok,
       socket
       |> assign(:columns, [
-        %{title: gettext("Icebox"), tasks: [
-          %{title: "First task", description: "Danish tart licorice candy lollipop chocolate bar."},
-          %{title: "First task", description: "Danish tart licorice candy lollipop chocolate bar."},
-          %{title: "First task", description: "Danish tart licorice candy lollipop chocolate bar."},
-          %{title: "First task", description: "Danish tart licorice candy lollipop chocolate bar."},
-          %{title: "First task", description: "Danish tart licorice candy lollipop chocolate bar."},
-          %{title: "First task", description: "Danish tart licorice candy lollipop chocolate bar."},
-          %{title: "First task", description: "Danish tart licorice candy lollipop chocolate bar."},
-          %{title: "First task", description: "Danish tart licorice candy lollipop chocolate bar."},
-        ]},
+        %{
+          title: gettext("Icebox"),
+          tasks: [
+            %{
+              title: "First task",
+              description: "Danish tart licorice candy lollipop chocolate bar."
+            },
+            %{
+              title: "First task",
+              description: "Danish tart licorice candy lollipop chocolate bar."
+            },
+            %{
+              title: "First task",
+              description: "Danish tart licorice candy lollipop chocolate bar."
+            },
+            %{
+              title: "First task",
+              description: "Danish tart licorice candy lollipop chocolate bar."
+            },
+            %{
+              title: "First task",
+              description: "Danish tart licorice candy lollipop chocolate bar."
+            },
+            %{
+              title: "First task",
+              description: "Danish tart licorice candy lollipop chocolate bar."
+            },
+            %{
+              title: "First task",
+              description: "Danish tart licorice candy lollipop chocolate bar."
+            },
+            %{
+              title: "First task",
+              description: "Danish tart licorice candy lollipop chocolate bar."
+            }
+          ]
+        },
         %{title: gettext("Backlog"), tasks: []},
-        %{title: gettext("ToDo"), tasks: [%{title: "First task", description: "Danish tart licorice candy lollipop chocolate bar."},]},
+        %{
+          title: gettext("ToDo"),
+          tasks: [
+            %{
+              title: "First task",
+              description: "Danish tart licorice candy lollipop chocolate bar."
+            }
+          ]
+        },
         %{title: gettext("Done"), tasks: []}
       ])
     }
@@ -51,10 +86,8 @@ defmodule LiraWeb.KanbanBoard do
             {#for t <- c.tasks}
               <Card title={t.title} description={t.description} />
             {/for}
-
           </div>
         {/for}
-
       </div>
     </div>
     """

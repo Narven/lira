@@ -12,10 +12,10 @@ defmodule LiraWeb.Components.Card do
     ~F"""
     <style>
       .card {
-        @apply overflow-hidden bg-gray-300 flex flex-col flex-nowrap w-full rounded my-2 p-2 cursor-move select-none shadow-md;
+      @apply overflow-hidden bg-gray-300 flex flex-col flex-nowrap w-full rounded my-2 p-2 cursor-move select-none shadow-md;
       }
       .title {
-        @apply font-bold mb-1;
+      @apply font-bold mb-1;
       }
     </style>
 
