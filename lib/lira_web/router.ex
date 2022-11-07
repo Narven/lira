@@ -1,6 +1,8 @@
 defmodule LiraWeb.Router do
   use LiraWeb, :router
 
+  import Surface.Catalogue.Router
+
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
@@ -17,7 +19,9 @@ defmodule LiraWeb.Router do
   scope "/", LiraWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    # get "/", PageController, :index
+    live "/demo", Demo
+    live "/", KanbanBoard
   end
 
   # Other scopes may use custom stacks.
@@ -51,6 +55,13 @@ defmodule LiraWeb.Router do
       pipe_through :browser
 
       forward "/mailbox", Plug.Swoosh.MailboxPreview
+    end
+  end
+
+  if Mix.env() == :dev do
+    scope "/" do
+      pipe_through :browser
+      surface_catalogue "/catalogue"
     end
   end
 end

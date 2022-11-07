@@ -7,6 +7,21 @@
 # General application configuration
 import Config
 
+config :tailwind,
+  version: "3.1.8",
+  default: [
+    args: ~w(
+      --config=tailwind.config.js
+      --input=css/app.css
+      --output=../priv/static/assets/app.css
+    ),
+    cd: Path.expand("../assets", __DIR__)
+  ]
+
+config :surface, :components, [
+  {Surface.Components.Form.ErrorTag, default_translator: {LiraWeb.ErrorHelpers, :translate_error}}
+]
+
 config :lira,
   ecto_repos: [Lira.Repo],
   generators: [binary_id: true]
@@ -17,6 +32,8 @@ config :lira, LiraWeb.Endpoint,
   render_errors: [view: LiraWeb.ErrorView, accepts: ~w(html json), layout: false],
   pubsub_server: Lira.PubSub,
   live_view: [signing_salt: "0VH1U+D2"]
+
+
 
 # Configures the mailer
 #
@@ -38,7 +55,14 @@ config :esbuild,
       ~w(js/app.js --bundle --target=es2017 --outdir=../priv/static/assets --external:/fonts/* --external:/images/*),
     cd: Path.expand("../assets", __DIR__),
     env: %{"NODE_PATH" => Path.expand("../deps", __DIR__)}
+  ],
+  catalogue: [
+    args: ~w(../deps/surface_catalogue/assets/js/app.js --bundle --target=es2016 --minify --outdir=../priv/static/assets/catalogue),
+    cd: Path.expand("../assets", __DIR__),
+    env: %{"NODE_PATH" => Path.expand("../deps", __DIR__)}
   ]
+
+config :tailwind, :version, "3.1.6"
 
 # Configures Elixir's Logger
 config :logger, :console,

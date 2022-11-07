@@ -39,6 +39,8 @@ defmodule LiraWeb do
 
       # Include shared imports and aliases for views
       unquote(view_helpers())
+      import Surface
+      use Surface.View, root: "lib/lira_web/templates"
     end
   end
 
@@ -90,6 +92,7 @@ defmodule LiraWeb do
       use Phoenix.HTML
 
       # Import LiveView and .heex helpers (live_render, live_patch, <.form>, etc)
+      import Phoenix.Component
       import Phoenix.LiveView.Helpers
 
       # Import basic rendering functionality (render, render_layout, etc)

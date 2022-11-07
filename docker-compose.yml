@@ -1,0 +1,21 @@
+version: '3'
+services:
+  database:
+    container_name: lira-database
+    image: "postgres:14"
+    env_file:
+      - .env # configure postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    ports:
+      - 5432:5432
+    networks:
+      - lira_network
+
+volumes:
+  postgres_data:
+
+
+networks:
+  lira_network:
+    driver: bridge
