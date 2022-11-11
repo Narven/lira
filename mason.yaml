@@ -1,0 +1,4 @@
+bricks:
+  surface_live_view:
+    git:
+      url: https://github.com/Narven/surface_live_view

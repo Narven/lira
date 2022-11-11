@@ -40,3 +40,5 @@ assets/css/_components.css
 
 /.env
 /.elixir_ls
+
+/.mason
